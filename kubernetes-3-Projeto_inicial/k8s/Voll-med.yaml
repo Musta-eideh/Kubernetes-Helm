@@ -19,3 +19,15 @@ spec:
         image: leoardosartorello/vollmed:v8
         ports:
         - containerPort: 3000
+        env:
+        # Define the environment variable
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: dados
+              key: DB_HOST
+        - name: DB_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: dados
+              key: DB_DATABASE
