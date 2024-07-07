@@ -31,3 +31,8 @@ spec:
             configMapKeyRef:
               name: dados
               key: DB_DATABASE
+        - name: DB_PASSWORD
+          valueFrom:
+            secretsKeyRef:
+              name: dados
+              key: DB_PASSWORD
