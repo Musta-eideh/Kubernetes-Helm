@@ -15,7 +15,7 @@ spec:
         app: vollmed
     spec:
       containers:
-      - name: vollmedAPI
+      - name: vollmed-api
         image: leoardosartorello/vollmed:v8
         ports:
         - containerPort: 3000
@@ -33,6 +33,6 @@ spec:
               key: DB_DATABASE
         - name: DB_PASSWORD
           valueFrom:
-            secretsKeyRef:
+            secretKeyRef:
               name: dados
               key: DB_PASSWORD
