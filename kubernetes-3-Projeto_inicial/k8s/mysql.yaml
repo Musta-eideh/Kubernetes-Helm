@@ -36,12 +36,11 @@ spec:
         volumeMounts:
         - name: www
           mountPath: /usr/share/nginx/html
-  volumeClaimTemplates:
-  - metadata:
-      name: www
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "my-storage-class"
-      resources:
-        requests:
-          storage: 1Gi
+      volumeMounts: # Esta ligando o volume para dentro do nosso container
+        - name: mysql-ps
+          mountPath: /var/lib/mysql
+        volumes:
+      volumes:
+        - name: mysql-ps # o nome precisa ser igual do VolumeMount
+        persistentVolumeClaim:
+          claimName: volume-mysql # Vamos em "Volum.yaml" para descobrir nosso nome
