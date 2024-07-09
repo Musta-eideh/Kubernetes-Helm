@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim # Para guardar dados
+metadata:
+  name: volume-mysql
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 15Gi
+  storageClassName: csi-hostpath-sc

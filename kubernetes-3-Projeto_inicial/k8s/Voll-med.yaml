@@ -31,8 +31,8 @@ spec:
             configMapKeyRef:
               name: dados
               key: DB_DATABASE
-        - name: DB_PASSWORD
+        - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: dados
+              name: passwords
               key: DB_PASSWORD
